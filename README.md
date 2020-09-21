@@ -4,6 +4,6 @@ This is a tool which uses a hybrid encryption model combining both RSA algorithm
 
 ## Proposed Features-
 
-- Take input message, public key, and cover image as input from the user, and encrypt the message.
+- Takes input message, public key, and cover image as input from the user, and encrypt the message.
 - Decrypt the received message, using the private key of the owner/recipient.
 - A command-line interface for the program to execute.
