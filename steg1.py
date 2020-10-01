@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import types
 
-def messageToBinary(message):
+def MessageToBinary(message):
     if type(message) == str:
         return ''.join([format(ord(i), "08b") for i in message ])
     elif type(message) == bytes or type(message) == np.ndarray:
@@ -15,7 +15,7 @@ def messageToBinary(message):
     else:
         raise TypeError("Input type not supported")
 
-def hideData(image, secret_message):
+def HideData(image, secret_message):
     n_bytes = image.shape[0] + image.shape[1] * 3 // 8
     print("Maximum bytes to encode: ",n_bytes)
 
@@ -26,13 +26,13 @@ def hideData(image, secret_message):
 
     data_index = 0
     
-    binary_secret_msg = messageToBinary(secret_message)
+    binary_secret_msg = MessageToBinary(secret_message)
 
     data_len = len(binary_secret_msg)
 
     for values in image:
         for pixel in values:
-            r, g, b = messageToBinary(pixel)
+            r, g, b = MessageToBinary(pixel)
             if data_index < data_len:
                 pixel[0] = int(r[:-1] + binary_secret_msg[data_index], 2)
                 data_index += 1
@@ -47,11 +47,11 @@ def hideData(image, secret_message):
     
     return image
 
-def showData(image):
+def ShowData(image):
     binary_data = ""
     for values in image:
         for pixel in values:
-            r, g, b = messageToBinary(pixel)
+            r, g, b = MessageToBinary(pixel)
             binary_data += r[-1]
             binary_data += g[-1]
             binary_data += b[-1]
@@ -80,7 +80,7 @@ def encoded_text():
         raise ValueError("Data is empty")
 
     filename = input("Enter the name of new encoded image (with extension): ")
-    encoded_image = hideData(image, data)
+    encoded_image = HideData(image, data)
     cv2.imwrite(filename, encoded_image)
 
 def decode_text():
@@ -90,7 +90,7 @@ def decode_text():
     print("The Steganographed image is as shown below: ")
     resized_image = cv2.resize(image, (500, 500))
 
-    text = showData(image)
+    text = ShowData(image)
     return text
 
 def main():
