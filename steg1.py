@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import cv2
 import numpy as np
 import types
@@ -70,10 +67,10 @@ def encoded_text():
     image_name = input("Enter image name (with extension): ")
     image = cv2.imread(image_name)
 
-    print("The shape of the image is: ",image.shape)
-    print("The original image is: ")
+    #  print("The shape of the image is: ",image.shape)
+    #  print("The original image is: ")
     resized_image = cv2.resize(image, (500, 500))
-    cv2_imshow(resized_image)
+    #  cv2.imshow("Cover",resized_image)
 
     data = input("Enter data to be encoded: ")
     if len(data) == 0:
@@ -87,8 +84,8 @@ def decode_text():
     image_name = input("Enter the image name to be decoded (with extension): ")
     image = cv2.imread(image_name)
 
-    print("The Steganographed image is as shown below: ")
-    resized_image = cv2.resize(image, (500, 500))
+    #  print("The Steganographed image is as shown below: ")
+    #  resized_image = cv2.resize(image, (500, 500))
 
     text = ShowData(image)
     return text
@@ -98,7 +95,7 @@ def main():
     userinput = int(a)
     if userinput == 1:
         print("\nEncoding....")
-        encode_text()
+        encoded_text()
     elif userinput == 2:
         print("\nDecoding....")
         print("Decoded message is " + decode_text())

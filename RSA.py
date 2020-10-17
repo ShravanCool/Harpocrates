@@ -2,24 +2,31 @@ import random
 from PIL import Image
 from Stegan import Encode, Decode
 import math
+
 letter = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",",",".","!","?"," "]
+
 number = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
+
 def cipher(num,e):
     for i in range(len(num)):
         X.append((int(num[i])**e)%n)
+
 def decipher(num,d):
     for i in range(len(num)):
         Y.append((int(num[i])**d)%n)
+
 def gcd(a, b):
     while b != 0:
         (a, b)=(b, a % b)
     return a
+
 def phi(n):
     amount = 0
     for k in range(1, n + 1):
         if math.gcd(n, k) == 1:
             amount += 1
     return amount
+
 def Decrypt():
     global i,j,Y
     Y=[]
@@ -37,6 +44,7 @@ def Decrypt():
     for i in numD:
         print(i,end="")
     print("\n")
+
 def Encrypt():
 # encrypts a plaintext message using the current key
     global plaintext, numC, j, X
