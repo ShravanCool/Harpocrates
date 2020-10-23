@@ -1,5 +1,6 @@
 import RSA02
 import steg02
+import time
 
 def main():
 
@@ -20,6 +21,7 @@ def main():
             steg02.encode(cipher, img, new_img_name)
 
             print('Encrypting...')
+            time.sleep(5)
             print('Encrypted message is: ', cipher)
             
         else:
@@ -31,6 +33,7 @@ def main():
             steg02.encode(cipher, img, new_img_name)
 
             print('Encrypting...')
+            time.sleep(5)
             print('Encrypted message is: ', cipher)
 
     elif instruction == 'd':
@@ -39,6 +42,7 @@ def main():
         img = input('Enter image name (with extension): ')
 
         print('Decrypting...')
+        time.sleep(5)
 
         cipher = steg02.decode(img)
 
