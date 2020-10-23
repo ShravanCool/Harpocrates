@@ -116,31 +116,31 @@ def decrypt(blocks, block_size = 2):
 
     return message
 
-def main():
-
-    choose_again = input('Do you want to generate a new public and private key? (y or n) ')
-    if choose_again == 'y':
-        chooseKeys()
-
-    instruction = input('Would you like to encrypt or decrypt? (e or d) ')
-    if instruction == 'e':
-        message = input('what would you like to encrypt?\n')
-        option = input('Do you want to encrypt using your own public key? (y or n) ')
-
-        if option == 'y':
-            print('Encrypting')
-            print(encrypt(message))
-        else:
-            file_option = input('Enter the file name that stores the public key: ')
-            print('Encrypting')
-            print(encrypt(message, file_option))
-
-    elif instruction == 'd':
-        message = input('What would you like to decrypt?\n')
-        print('Decrypting...')
-        print(decrypt(message))
-    else:
-        print('This is not a valid instruction.')
-
-main()
+#  def main():
+#
+    #  choose_again = input('Do you want to generate a new public and private key? (y or n) ')
+    #  if choose_again == 'y':
+        #  chooseKeys()
+#
+    #  instruction = input('Would you like to encrypt or decrypt? (e or d) ')
+    #  if instruction == 'e':
+        #  message = input('what would you like to encrypt?\n')
+        #  option = input('Do you want to encrypt using your own public key? (y or n) ')
+#
+        #  if option == 'y':
+            #  print('Encrypting')
+            #  print(encrypt(message))
+        #  else:
+            #  file_option = input('Enter the file name that stores the public key: ')
+            #  print('Encrypting')
+            #  print(encrypt(message, file_option))
+#
+    #  elif instruction == 'd':
+        #  message = input('What would you like to decrypt?\n')
+        #  print('Decrypting...')
+        #  print(decrypt(message))
+    #  else:
+        #  print('This is not a valid instruction.')
+#
+#  main()
 

@@ -57,22 +57,22 @@ def encode_enc(newimg, data):
         else:
             x+=1
 
-def encode():
-    img = input("Enter image name(with extension): ")
+def encode(data, img, new_img_name):
+    #  img = input("Enter image name(with extension): ")
     image = Image.open(img, 'r')
 
-    data = input("Enter data to be encoded: ")
+    #  data = input("Enter data to be encoded: ")
     if len(data)==0:
         raise ValueError('Data is Empty')
 
     newimg = image.copy()
     encode_enc(newimg,data)
 
-    new_img_name = input("Enter the name of the new inage(with extension): ")
+    #  new_img_name = input("Enter the name of the new image(with extension): ")
     newimg.save(new_img_name, str(new_img_name.split(".")[1].upper()))
 
-def decode():
-    img = input("Enter image name(with extension): ")
+def decode(img):
+    #  img = input("Enter image name(with extension): ")
     image = Image.open(img, 'r')
 
     data = ''
@@ -95,15 +95,15 @@ def decode():
         if pixels[-1]%2 != 0:
             return data
 
-def main():
-    a = int(input("Welcome to Steganography\n1. Encode\n2. Decode"))
-    if a==1:
-        encode()
-    elif a==2:
-        print("Decoded message: " + decode())
-    else:
-        raise Exception("Enter correct Input")
-
-if __name__=='__main__':
-    main()
+#  def main():
+    #  a = int(input("Welcome to Steganography\n1. Encode\n2. Decode"))
+    #  if a==1:
+        #  encode()
+    #  elif a==2:
+        #  print("Decoded message: " + decode())
+    #  else:
+        #  raise Exception("Enter correct Input")
+#
+#  if __name__=='__main__':
+    #  main()
 
