@@ -84,3 +84,28 @@ def decrypt(blocks, block_size = 2):
 
     return message
 
+
+# def main():
+
+#     # while True:
+#     #     ch = int(input("Choice:"))
+#     #     if ch==1:
+#     #         message = "Hi There!!!"
+#     #         x = encrypt(message)
+#     #         print(x)
+#     #     elif ch==2:
+#     #         x = input("Cipher:")
+#     #         res = decrypt(x)
+#     #         print(res)
+#     #     elif ch==3:
+#     #         break
+        
+#     message = "Hi There!!!"
+#     x = encrypt(message)
+#     print(x)
+#     res = decrypt(x)
+#     print(res)
+  
+
+# main()
+
